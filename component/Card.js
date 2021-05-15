@@ -3,15 +3,16 @@ import { Card, ListItem, Button } from 'react-native-elements'
 import {StyleSheet, Text, View, Image, ImageBackground, ScrollView, FlatList } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from "react-native-vector-icons/Ionicons";
-import {gallery} from '../screens/store'
+//import {gallery} from '../screens/store'
 
-const CardComponent = (props) => {
+const CardComponent = ({ navigation, route, gallery, props }) => {
 
     var day = new Date().getDate(); 
     var month = new Date().getMonth() + 1; 
     var year = new Date().getFullYear();
 
-
+    console.log('card ',route)
+    //const gallery = route.params.gallery;
    
     return (
         <FlatList
@@ -22,8 +23,7 @@ const CardComponent = (props) => {
             <View style={styles.container}>
                 <ScrollView>
                 <TouchableOpacity
-                   onPress={() => props.navigation.navigate('Post', { item: item.key , gallery }) }
-                  >
+                   onPress={() => navigation.navigate('Post', { item: item.key , gallery }) }>
                 <View style={{elevation:10}}>
                 <ImageBackground 
                     source={item.long_image}

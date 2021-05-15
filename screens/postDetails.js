@@ -28,8 +28,8 @@ import {
   const gallery = route.params.gallery;
 
 
-  console.log(gallery);
-  console.log(data);
+  console.log(item);
+  console.log(data[item]);
   const goBack = () => {
     navigation.goBack();
   };
@@ -41,9 +41,9 @@ import {
         style={{ backgroundColor: "white" }}
       >
         <ImageBackground source={data[item].long_image} style={styles.image}>
-          <Text style={styles.TagLine}>Discover {data[item].title}</Text>
-          <Text style={styles.Placename}>
-            {data[item].coordinate.latitude}
+          <Text style={styles.Placename}>{data[item].title}</Text>
+          <Text style={styles.TagLine}>
+            {data[item].adress}
           </Text>
           <TouchableOpacity
             onPress={goBack}

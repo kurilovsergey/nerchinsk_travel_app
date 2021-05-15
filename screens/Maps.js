@@ -36,10 +36,6 @@ const Maps = ({ navigation, route }) => {
 
   return (
     <View>
-      <Text>"    "</Text>
-      <Text>"    "</Text>
-      <Text>"    "{info.longitude}</Text>
-      <Text>"    "{info.latitude}</Text>
       <MapView
         style={styles.map}
         initialRegion={{

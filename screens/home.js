@@ -26,7 +26,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import butinsky from '../assets/bk_butinsky.jpeg'
 import title_image from '../assets/title_image.jpeg'
 import MapView,{ Marker }  from 'react-native-maps';
-import {gallery} from './store.js'
+import {gallery, architectural_monument} from './store.js'
+//import {architectural_monument} from './stote.js'
 
 const Home = ({ navigation }) => {
   const image = title_image
@@ -113,7 +114,7 @@ const Home = ({ navigation }) => {
               <Text style={{ fontSize: hp("2.5%"), fontWeight: "bold" }}>
                 Рекомендуем
             </Text>
-              <TouchableOpacity onPress={() => navigation.navigate('Example')}>
+              <TouchableOpacity onPress={() => navigation.navigate('Example', {gallery})}>
                 <Text
                   style={{
                     fontSize: hp("2%"),
@@ -243,6 +244,59 @@ const Home = ({ navigation }) => {
             </View>
 
           </View>
+          <View style={{ padding: 16 }}>
+            <Text style={{ fontSize: hp("2.5%"), fontWeight: "bold" }}>
+              Об истории
+          </Text>
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate("Example", {gallery: architectural_monument} )}>
+            <Image
+              source={butinsky}
+              style={{
+                width: "95%",
+                height: hp("30%"),
+                borderRadius: 10,
+                marginLeft: wp('2%')
+
+              }}
+            />
+
+            <View style={{ position: "absolute", bottom: 0, padding: hp("1%") }}>
+              <View style={{ flexDirection: "row" }}>
+                <Icon
+                  name="location-outline"
+                  size={20}
+                  color="#ff6200"
+                  style={{ marginLeft: 10, position: "relative", top: 4 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 22,
+                    color: "white",
+                    fontWeight: "normal",
+                    marginBottom: "2%",
+                    marginHorizontal: 10,
+                    
+                  }}
+                >
+                  Памятники архитектуры
+              </Text>
+              </View>
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: "white",
+                  fontWeight: "normal",
+                  marginBottom: 10,
+                  opacity: 0.9,
+                  marginLeft: 10,
+                  padding: 5
+                }}
+              >
+                {"Часть выбранных для маркировки объектов имеют историю общероссийского и даже международного значения. "}
+              </Text>
+            </View>
+            </TouchableOpacity>
           <MapView
             style={styles.map}
             initialRegion={{
