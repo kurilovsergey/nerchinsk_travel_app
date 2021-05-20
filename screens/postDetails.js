@@ -29,7 +29,7 @@ import {
 
 
   console.log(item);
-  console.log(data[item]);
+  console.log(data);
   const goBack = () => {
     navigation.goBack();
   };
