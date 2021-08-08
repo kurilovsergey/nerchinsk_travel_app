@@ -32,7 +32,10 @@ const Maps = ({ navigation, route }) => {
   const goBack = () => {
     navigation.goBack();
   };
-
+   //console.log('chto prihodit v map', gallery);
+   //console.log('chto prihodit v map', gallery[0].key);
+   console.log('chto prihodit v [0].place', item);
+   
 
   return (
     <View>
@@ -58,7 +61,8 @@ const Maps = ({ navigation, route }) => {
           <Icon name="arrow-back-outline" size={20} color="white" />
 
         </TouchableOpacity>
-        {item ?
+        {!item && gallery[item].place!="butinsky" ?
+        
           <Marker
             key={1}
             coordinate={gallery[item].coordinate}

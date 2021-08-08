@@ -33,9 +33,9 @@ import {
   const goBack = () => {
     navigation.goBack();
   };
-
+// margin top отступ сверху
   return (
-    <View style={{ backgroundColor: "white", flex:1, marginTop:hp('2.5%')}}>
+    <View style={{ backgroundColor: "white", flex:1, marginTop:hp('0%')}}>  
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: "white" }}
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    height: responsiveScreenHeight(25),
+    height: responsiveScreenHeight(35),
     justifyContent: "flex-end",
   },
   TagLine: {

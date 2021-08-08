@@ -25,6 +25,7 @@ import { Image, withBadge } from 'react-native-elements';
 import { SafeAreaView } from "react-native-safe-area-context";
 import butinsky from '../assets/bk_butinsky.jpeg'
 import title_image from '../assets/title_image.jpeg'
+import old_nerchinsk from '../assets/architectural_monument/old_nerchinsk.jpeg'
 import MapView,{ Marker }  from 'react-native-maps';
 import {gallery, architectural_monument} from './store.js'
 //import {architectural_monument} from './stote.js'
@@ -55,29 +56,29 @@ const Home = ({ navigation }) => {
   //const BadgedIcon = withBadge(counter)(Icon)
 
   return (
-    <SafeAreaView >
-      <ScrollView showsVerticalScrollIndicator={false}>
+   // <SafeAreaView >
+     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flexGrow: 1 }}>
           <View>
             <ImageBackground source={image} style={styles.image}>
               <View style={styles.searchContainer}>
                 <Text style={styles.userGreet}>Нерчинск</Text>
-                <Text style={styles.userText}>
-                 Что мы посетим сегодня?
+                <Text style={styles.userText}>Путеводитль по интересным местам города
             </Text>
-              </View>
+        </View>
 
               <TouchableOpacity
                 onPress={() => navigation.openDrawer()}
                 style={{
                   position: "absolute",
-                  top: hp("1.5%"),
+                  top: hp("5%"),
                   left: "5%",
                 }}>
                 <Icon
                   name="menu-outline"
-                  size={hp("4%")}
+                  size={hp("5%")}
                   color="#000"
+                  
                 />
               </TouchableOpacity>
 
@@ -85,14 +86,14 @@ const Home = ({ navigation }) => {
                 onPress={() => navigation.navigate('Maps', {item: null, gallery})}
                 style={{
                   position: "absolute",
-                  top: hp("2%"),
-                  right: "5%",
+                  top: hp("5%"),
+                  right: "3,5%",
                 }}
               >
                 <Icon
                   type="ionicon"
                   name="map"
-                  size={hp("3%")}
+                  size={hp("4%")}
                   color="#fff"
 
                 />
@@ -216,7 +217,7 @@ const Home = ({ navigation }) => {
                         PlaceholderContent={<ActivityIndicator size="small" color="#0000ff" />}
 
                         style={{
-                          width: responsiveScreenWidth(50),
+                          width: responsiveScreenWidth(45),
                           marginRight: wp("2%"),
                           height: responsiveScreenHeight(30),
                           borderRadius: 10,
@@ -251,7 +252,7 @@ const Home = ({ navigation }) => {
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("Example", {gallery: architectural_monument} )}>
             <Image
-              source={butinsky}
+              source={old_nerchinsk}
               style={{
                 width: "95%",
                 height: hp("30%"),
@@ -316,7 +317,7 @@ const Home = ({ navigation }) => {
         </View>
         
       </ScrollView>
-    </SafeAreaView>
+//    </SafeAreaView>
   );
 };
 
@@ -329,7 +330,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: wp("100%"),
-    height: responsiveScreenHeight(25),
+    height: responsiveScreenHeight(35),
     
   },
 
@@ -338,14 +339,15 @@ const styles = StyleSheet.create({
     paddingLeft: wp("0%")
   },
   userGreet: {
-    paddingLeft: wp("3%"),
+    paddingTop: wp("25%"),
+    paddingLeft: wp("50%"),
     fontSize: responsiveScreenFontSize(4),
     fontWeight: "bold",
     color: "white",
     //marginBottom: 100
     //backgroundColor: "black",
     //opacity: 0.5,
-    width: 200,
+    
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
@@ -353,6 +355,8 @@ const styles = StyleSheet.create({
     fontSize: responsiveScreenFontSize(1.7),
     fontWeight: "normal",
     color: "white",
+    //paddingTop: wp("25%"),
+    paddingLeft: wp("15%")
   },
   searchBox: {
     marginTop: hp("3%"),
