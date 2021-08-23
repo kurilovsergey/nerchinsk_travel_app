@@ -76,14 +76,17 @@ const Home = ({ navigation }) => {
                 }}>
                 <Icon
                   name="menu-outline"
-                  size={hp("5%")}
+                  size={hp("4%")}
                   color="#000"
                   
                 />
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => navigation.navigate('Maps', {item: null, gallery})}
+                onPress={() => {
+                   //let store= gallery.concat(architectural_monument)
+                  navigation.navigate('Maps', {item: null, gallery: [...architectural_monument, ...gallery]})}
+                }
                 style={{
                   position: "absolute",
                   top: hp("5%"),
@@ -93,7 +96,7 @@ const Home = ({ navigation }) => {
                 <Icon
                   type="ionicon"
                   name="map"
-                  size={hp("4%")}
+                  size={hp("3,5%")}
                   color="#fff"
 
                 />
@@ -247,7 +250,7 @@ const Home = ({ navigation }) => {
           </View>
           <View style={{ padding: 16 }}>
             <Text style={{ fontSize: hp("2.5%"), fontWeight: "bold" }}>
-              Об истории
+            Памятники архитектуры
           </Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("Example", {gallery: architectural_monument} )}>
@@ -339,15 +342,17 @@ const styles = StyleSheet.create({
     paddingLeft: wp("0%")
   },
   userGreet: {
-    paddingTop: wp("25%"),
-    paddingLeft: wp("50%"),
-    fontSize: responsiveScreenFontSize(4),
+    paddingTop: wp("23%"),
+    textAlign: 'right',
+    paddingRight: hp("1%"),
+    //paddingLeft: hp("27%"),
+    fontSize: responsiveScreenFontSize(5),
     fontWeight: "bold",
     color: "white",
+    //padding: hp("2%"),
     //marginBottom: 100
     //backgroundColor: "black",
     //opacity: 0.5,
-    
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
@@ -355,8 +360,10 @@ const styles = StyleSheet.create({
     fontSize: responsiveScreenFontSize(1.7),
     fontWeight: "normal",
     color: "white",
+    textAlign: 'right',
+    paddingRight: hp("1%")
     //paddingTop: wp("25%"),
-    paddingLeft: wp("15%")
+    //paddingLeft: hp("10%")
   },
   searchBox: {
     marginTop: hp("3%"),

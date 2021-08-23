@@ -50,7 +50,7 @@ import {
             style={{
               position: "absolute",
               left: "5%",
-              top: "10%",
+              top: hp("5%"),
               backgroundColor: "#ff6200",
               borderRadius: 40,
               padding: 10,
@@ -64,7 +64,7 @@ import {
             style={{
               position: "absolute",
               right: "5%",
-              top: "10%",
+              top: hp("5%"),
               backgroundColor: "#ff6200",
               borderRadius: 40,
               padding: 10,
@@ -106,7 +106,7 @@ import {
                     />
                     <Icon
                       name="pin-outline"
-                      size={24}
+                      size={20}
                       color="white"
                       style={styles.imageLocationIcon}
                     />

@@ -7,6 +7,7 @@ import Card from '../component/Card'
 import MapView, { Marker, Callout } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation'
 import { marker } from '../assets/images/marker.png'
+import { architectural_monument} from './store.js'
 
 //import * as Location from 'expo-location';
 //import Geolocation from 'react-native-geolocation-service';
@@ -34,8 +35,8 @@ const Maps = ({ navigation, route }) => {
   };
    //console.log('chto prihodit v map', gallery);
    //console.log('chto prihodit v map', gallery[0].key);
-   console.log('chto prihodit v [0].place', item);
-   
+   console.log('item do', item);
+  
 
   return (
     <View>
@@ -61,46 +62,72 @@ const Maps = ({ navigation, route }) => {
           <Icon name="arrow-back-outline" size={20} color="white" />
 
         </TouchableOpacity>
-        {!item && gallery[item].place!="butinsky" ?
         
-          <Marker
-            key={1}
-            coordinate={gallery[item].coordinate}
-            title={gallery[item].title}
-            description={"Бутинский дворец"}
-            image={marker}
-          >
-            <Icon
-              name="location-outline"
-              size={50}
-              color="#ff6200"
-              style={{ marginLeft: 10, position: "relative" }}
-            />
-          </Marker>
-          :
-          gallery.map((i) => (
+        {
+        item===null || (!item && gallery[item].place=="butinsky") ?
+          gallery.filter((i)=>i.place!='butinsky').map((i) => (
           <Marker
             key={i.key}
             coordinate={i.coordinate}
             title={i.title}
             description={"Бутинский дворец"}
+            //style={{ height: 300, width: 300 }}
           //image={require('../assets/images/marker.png')}
           //style={{ width: 100, height: 100 }}
           >
+            
             <Icon
               name="location-outline"
               size={50}
               color="#ff6200"
               style={{ marginLeft: 10, position: "relative" }}
-            />
+            /> 
             <Callout>
-              <View>
+              <View style={{ width: 150, height: 150 }}>
                 <Text>{i.title}</Text>
-                <Text>{i.title}</Text>
+                <Text>{i.title}</Text>  
+                <Image style={{ width: 120, height: 150 }} source={i.image}/>
               </View>
+              
             </Callout>
           </Marker>
-          ))}
+          )) 
+          :
+
+          <Marker 
+          
+          key={1}
+          coordinate={gallery[item].coordinate}
+          title={gallery[item].title}
+          description={"Бутинский дворец"}
+          image={marker}
+          
+        >
+          <Icon
+            name="location-outline"//{gallery[item].icon}
+            size={50}
+            color="#ff6200"
+            style={{ marginLeft: 10, position: "relative" }}
+          />
+          <Callout >
+              <View style={{ width: 150, height: 170  }}>
+                <Text>{gallery[item].title}</Text> 
+                <Image style={{ width: 150, height: 100 }} source={gallery[item].long_image}/>
+                
+                <TouchableOpacity
+                      onPress={() => navigation.navigate("Post", { item: gallery[item].key , gallery })}>
+                     <View style={{ height: 50, width: 100 }}>
+                      <Text style={{ backgroundColor: "#ff6200", height: 50, width: 100 }}>Больше информации</Text>
+                      </View>
+                </TouchableOpacity>
+                
+                
+              </View>
+              
+            </Callout>
+        </Marker>
+        
+          }
       </MapView>
     </View>
   );
