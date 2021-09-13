@@ -7,7 +7,6 @@ import mihail_full from '../assets/mihail-full.jpeg'
 import kolobovnikov_home from '../assets/kolobovnikov_home.png'
 import mirror from '../assets/mirror.webp'
 import long_mirror from '../assets/long_mirror.jpeg'
-
 import riph_shop from '../assets/architectural_monument/riph_shop.jpg'
 import verhityrov_home from '../assets/architectural_monument/verhityrov_home.jpg'
 import ryzikov_home from '../assets/architectural_monument/ryzikov_home.jpg'
@@ -19,7 +18,8 @@ import mihailov_school from '../assets/architectural_monument/mihailov_school.jp
 import koryakin_house from '../assets/architectural_monument/koryakin_house.jpg'
 import vine_house from '../assets/architectural_monument/vine_house.jpeg'
 import square from '../assets/architectural_monument/square.jpg'
-import home_russian_icon from '../assets/images/Home-Russian-icon.png'
+
+
 
 
 export const gallery = [
@@ -36,7 +36,7 @@ export const gallery = [
     {
       image: mihail,
       long_image: mihail_full,
-      title: "Архангел \n Михаил",
+      title: "Архангел Михаил",
       key: 1,
       place: "butinsky",
       adress: "Советская ул., 83",
@@ -72,7 +72,7 @@ export const gallery = [
     {
       image: kolobovnikov_home,
       long_image: kolobovnikov_home,
-      title: "Памятники \n Архитектуры",
+      title: "Памятники Архитектуры",
       key: 5,
       coordinate: { latitude: 51.97879, longitude: 116.58470 },
       place: "house"
@@ -84,7 +84,7 @@ export const gallery = [
       long_image: kolobovnikov_home,
       title: "Дом колобовниковых",
       key: 0,
-      icon: home_russian_icon,
+      icon: "home-variant-outline",
       coordinate: { latitude: 51.974621, longitude: 116.585900 },
       place: "house",
       info: "Оригинальный пример крупного одноэтажного здания начала XX века, не имеющего аналогов в городе, но с традиционной итальянской галереей парадного входа. Имеет П-образный в плане объем с крыльями, развитыми вглубь двора, и симметричными ризалитами по флангам главного фасада. Протяженные фасады дома сплошь прорезаны прямоугольными окнами с фигурными сандриками наличников. По фризу проходит пропильная резьба, характерная для Железнодорожных построек того времени. Неординарный облик дому придает сложная кровля: фронтоны с полувальмами на ризалитах и боковых фасадах, чешуйчатые башенки с кованными металлическими решетками. \n Дом принадлежал семье купцов Колобовниковых, приехавших в Нерчинск из Нижегородской губернии в конце XIX века, и организовавших здесь крупную торговую фирму. Б Советское время в доме располагались различные административные учреждения, а затем Детская художественная школа."

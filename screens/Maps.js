@@ -5,9 +5,9 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import Card from '../component/Card'
 import MapView, { Marker, Callout } from 'react-native-maps';
-import Geolocation from '@react-native-community/geolocation'
 import { marker } from '../assets/images/marker.png'
 import { architectural_monument} from './store.js'
+import Geolocation from 'react-native-geolocation-service';
 
 //import * as Location from 'expo-location';
 //import Geolocation from 'react-native-geolocation-service';
@@ -20,15 +20,10 @@ const Maps = ({ navigation, route }) => {
   const gallery = route.params.gallery
   const item = route.params.item
 
-  //console.log('param! ', gallery);
-  //console.log('item ',item);
-  //gallery.map((i) => ( console.log(i.key)))
-
-  let [info, setInfo] = useState(0)
 
 
 
-  Geolocation.getCurrentPosition(data => { setInfo(data) })
+ 
 
   const goBack = () => {
     navigation.goBack();
@@ -36,6 +31,7 @@ const Maps = ({ navigation, route }) => {
    //console.log('chto prihodit v map', gallery);
    //console.log('chto prihodit v map', gallery[0].key);
    console.log('item do', item);
+  
   
 
   return (
